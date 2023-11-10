@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="shortcut icon" type="image/png" href="/icon.png" />
 
+    <script
+      src="https://kit.fontawesome.com/ead536e1f1.js"
+      crossorigin="anonymous"
+    ></script>
+
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
       rel="stylesheet"
@@ -27,50 +32,75 @@
     ></script>
 
     <script defer src="mapty.js"></script>
+
     <title>mapty // Map your workouts</title>
   </head>
   <body>
     <div class="sidebar">
+      <div class="alerts-containers alert-container" role="alert">
+        <img src="warning.png" class="alert-icon" alt="alert icon" />
+        <h4>All inputs have to be positive numbers!</h4>
+      </div>
+
+      <div class="alerts-containers workout-confirmation-message-container">
+        <img src="check.png" class="check-icon" alt="check icon" />
+        <h4>Workout successfully added!</h4>
+      </div>
+
       <img src="logo.png" alt="Logo" class="logo" />
 
-      <ul class="workouts">
-        <form class="form hidden">
-          <div class="form__row">
-            <label class="form__label">Type</label>
-            <select class="form__input form__input--type">
-              <option value="running">Running</option>
-              <option value="cycling">Cycling</option>
-            </select>
-          </div>
-          <div class="form__row">
-            <label class="form__label">Distance</label>
-            <input class="form__input form__input--distance" placeholder="km" />
-          </div>
-          <div class="form__row">
-            <label class="form__label">Duration</label>
-            <input
-              class="form__input form__input--duration"
-              placeholder="min"
-            />
-          </div>
-          <div class="form__row">
-            <label class="form__label">Cadence</label>
-            <input
-              class="form__input form__input--cadence"
-              placeholder="step/min"
-            />
-          </div>
-          <div class="form__row form__row--hidden">
-            <label class="form__label">Elev Gain</label>
-            <input
-              class="form__input form__input--elevation"
-              placeholder="meters"
-            />
-          </div>
-          <button class="form__btn">OK</button>
-        </form>
+      <div class="div-workouts">
+        <ul class="workouts">
+          <form class="form hidden">
+            <div class="form__row">
+              <label class="form__label">Type</label>
+              <select class="form__input form__input--type">
+                <option value="running">Running</option>
+                <option value="cycling">Cycling</option>
+              </select>
+            </div>
+            <div class="form__row">
+              <label class="form__label">Distance</label>
+              <input
+                class="form__input form__input--distance"
+                placeholder="km"
+              />
+            </div>
+            <div class="form__row">
+              <label class="form__label">Duration</label>
+              <input
+                class="form__input form__input--duration"
+                placeholder="min"
+              />
+            </div>
+            <div class="form__row">
+              <label class="form__label">Cadence</label>
+              <input
+                class="form__input form__input--cadence"
+                placeholder="step/min"
+              />
+            </div>
+            <div class="form__row form__row--hidden">
+              <label class="form__label">Elev Gain</label>
+              <input
+                class="form__input form__input--elevation"
+                placeholder="meters"
+              />
+            </div>
+            <button class="form__btn">OK</button>
+          </form>
 
-        <!-- <li class="workout workout--running" data-id="1234567890">
+          <div class="no-workouts-display">
+            <p class="no-workouts-display-text">Click on map to get started</p>
+            <img src="running-image.jpg" alt="" />
+          </div>
+
+          <div class="clear-btn-wrapper">
+            <button class="sort-btn">Sort</button>
+            <button class="clear-btn">Clear All</button>
+          </div>
+
+          <!-- <li class="workout workout--running" data-id="1234567890">
           <h2 class="workout__title">Running on April 14</h2>
           <div class="workout__details">
             <span class="workout__icon">🏃‍♂️</span>
@@ -117,7 +147,8 @@
             <span class="workout__unit">m</span>
           </div>
         </li> -->
-      </ul>
+        </ul>
+      </div>
 
       <p class="copyright">
         &copy; Copyright by
